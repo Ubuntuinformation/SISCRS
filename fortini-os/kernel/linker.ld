@@ -1,31 +1,20 @@
-ENTRY(start)
+OUTPUT_FORMAT("elf32-i386")
+OUTPUT_ARCH(i386)
+ENTRY(kernel_entry)
 
-SECTIONS
-{
-    . = 0x100000;
+SECTIONS {
+    . = 0x0;
     
-    .multiboot :
-    {
-        *(.multiboot)
-    }
-    
-    .text :
-    {
+    .text ALIGN(0x1000) : {
         *(.text)
-    }
-    
-    .rodata :
-    {
         *(.rodata)
     }
     
-    .data :
-    {
+    .data ALIGN(0x1000) : {
         *(.data)
     }
     
-    .bss :
-    {
+    .bss ALIGN(0x1000) : {
         *(COMMON)
         *(.bss)
     }
