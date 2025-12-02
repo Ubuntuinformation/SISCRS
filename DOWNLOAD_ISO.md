@@ -10,7 +10,7 @@ git clone https://github.com/Ubuntuinformation/SISCRS.git
 cd SISCRS
 
 # A ISO estará em:
-fortini-os/build/fortini.iso
+fortini-os/build/FortiniOSINCLUIDOSHELL.iso
 ```
 
 ## Testando com QEMU (Linux/Mac/Windows)
@@ -23,12 +23,12 @@ make test
 
 ### Opção 2: QEMU manual
 ```bash
-qemu-system-i386 -cdrom fortini-os/build/fortini.iso -m 512
+qemu-system-i386 -cdrom fortini-os/build/FortiniOSINCLUIDOSHELL.iso -m 512 -serial stdio -monitor none -nographic
 ```
 
 ### Opção 3: Com mais recursos
 ```bash
-qemu-system-i386 -cdrom fortini-os/build/fortini.iso -m 1024 -smp 2 -enable-kvm
+qemu-system-i386 -cdrom fortini-os/build/FortiniOSINCLUIDOSHELL.iso -m 1024 -smp 2 -enable-kvm -serial stdio -monitor none -nographic
 ```
 
 ## Testando em Hardware Real
@@ -39,7 +39,7 @@ qemu-system-i386 -cdrom fortini-os/build/fortini.iso -m 1024 -smp 2 -enable-kvm
 lsblk
 
 # Escrever ISO no USB (substitua sdX pelo seu dispositivo)
-sudo dd if=fortini-os/build/fortini.iso of=/dev/sdX bs=4M status=progress
+sudo dd if=fortini-os/build/FortiniOSINCLUIDOSHELL.iso of=/dev/sdX bs=4M status=progress
 sudo sync
 ```
 
