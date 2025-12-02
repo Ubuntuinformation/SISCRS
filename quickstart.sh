@@ -3,38 +3,6 @@
 # Script de Quick Start para Fortini OS
 # Baixa a ISO do GitHub e testa com QEMU
 
-echo "=== Fortini OS - Quick Start ==="
-echo ""
-
-# Verificar se git está instalado
-if ! command -v git &> /dev/null; then
-    echo "❌ Git não instalado. Instale com: sudo apt install git"
-    exit 1
-fi
-
-# Verificar se qemu está instalado
-if ! command -v qemu-system-i386 &> /dev/null; then
-    echo "⚠️  QEMU não instalado!"
-    echo "   Linux: sudo apt install qemu-system-x86"
-    echo "   Mac:   brew install qemu"
-    echo "   Windows: Baixe em https://www.qemu.org"
-    echo ""
-    echo "Continuando sem QEMU (apenas download)..."
-fi
-
-# Clone do repositório
-echo "📥 Clonando repositório..."
-git clone https://github.com/Ubuntuinformation/SISCRS.git
-cd SISCRS
-
-echo ""
-echo "✅ Repositório clonado!"
-echo ""
-echo "📁 Arquivos importantes:"
-echo "   - fortini-os/build/fortini.iso (ISO bootável)"
-echo "   - fortini-os/shell/siscrshell (Shell)"
-echo "   - fortini-os/kernel/kernel.elf (Kernel)"
-echo ""
 
 # Verificar se a ISO existe
 if [ -f "fortini-os/build/fortini.iso" ]; then
